@@ -1,0 +1,16 @@
+{
+  "extends": "expo/tsconfig.base",
+  "paths": {
+    "@*": ["./src/*"]
+  },
+  "exclude": ["node_modules", "typings"],
+  "compilerOptions": {
+    "typeRoots": ["./src/types", "./src/global.d.ts", "./node_modules/@types"],
+    "strict": true,
+    "ts-node": {
+      "files": true
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  }
+}
