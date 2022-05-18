@@ -27,6 +27,7 @@ export default () => {
     MontBold: require("./assets/customFonts/Mont-SemiBold.ttf"),
     MontBoldHeavy: require("./assets/customFonts/Mont-Bold.ttf"),
   });
+  debugger
   return  <PaperProvider theme={theme}>
     <View>
      <StorybookUIRoot />

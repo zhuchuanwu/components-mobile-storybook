@@ -2,7 +2,7 @@ import { AntDesign } from "@expo/vector-icons";
 import React from "react";
 import { Image, StyleProp, TextStyle, ViewStyle } from "react-native";
 import { Button as ButtonBase, IconButton } from "react-native-paper";
-import { t } from "react-native-tailwindcss";
+import { color, t } from "react-native-tailwindcss";
 
 interface ButtonProps {
   style?: StyleProp<ViewStyle>;
@@ -56,6 +56,7 @@ const Button: React.FC<ButtonProps> = ({
       style={[...defaultStyle, style]}
       labelStyle={[t.fontSemibold, ...defaultLabelStyle, labelStyle]}
       onPress={onPress}
+      color={color.primary}
       icon={({ size, color, direction }) => icon?.image ?? null}
       contentStyle={[size === "lg" ? t.h12 : t.h8]}
       // contentStyle={{flexDirection: 'row-reverse'}}
