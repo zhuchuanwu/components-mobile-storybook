@@ -4,6 +4,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "author": "Jianlong <1317272927@qq.com>",
   "license": "MIT",
+  "repository":"https://github.com/ThePiqueLab/archus-components-mobile.git",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
