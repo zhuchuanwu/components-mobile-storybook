@@ -1,0 +1,27 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Gen Token
+        run: |
+          echo "@thepiquelab:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
+      - run: yarn install
+      - run: yarn test
+      - run: CI= yarn build
