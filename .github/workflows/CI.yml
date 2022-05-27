@@ -24,4 +24,4 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ~/.npmrc
       - run: yarn install
       # - run: yarn test
-      - run: CI= yarn build
+      # - run: CI= yarn build
