@@ -1,6 +1,6 @@
 {
   "name": "archus-components-mobile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "node_modules/expo/AppEntry.js",
   "author": "Jianlong <1317272927@qq.com>",
   "license": "MIT",
