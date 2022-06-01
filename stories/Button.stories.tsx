@@ -16,7 +16,7 @@ export default {
 
 export const Basic = (args: ButtonProps) => (
   <View>
-    <Button {...args} />
+    <Button {...args} style={[t.mB6]} />
     <ThemeProvider>
       <Button {...args} />
     </ThemeProvider>
