@@ -14,7 +14,14 @@ export default {
   },
 };
 
-export const Basic = (args: ButtonProps) => <Button {...args} />;
+export const Basic = (args: ButtonProps) => (
+  <View>
+    <Button {...args} />
+    <ThemeProvider>
+      <Button {...args} />
+    </ThemeProvider>
+  </View>
+);
 Basic.args = {
   onPress: () => {
     alert("sdds");
