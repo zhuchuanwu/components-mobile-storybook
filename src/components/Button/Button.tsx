@@ -4,7 +4,7 @@ import { Image, StyleProp, TextStyle, ViewStyle } from "react-native";
 import { Button as ButtonBase, IconButton } from "react-native-paper";
 import { color, t } from "react-native-tailwindcss";
 
-interface ButtonProps {
+export interface ButtonProps {
   style?: StyleProp<ViewStyle>;
   mode?: "text" | "outlined" | "contained" | undefined;
   onPress?: () => void;
