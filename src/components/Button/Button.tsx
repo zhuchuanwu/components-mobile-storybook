@@ -56,7 +56,6 @@ const Button: React.FC<ButtonProps> = ({
       style={[...defaultStyle, style]}
       labelStyle={[t.fontSemibold, ...defaultLabelStyle, labelStyle]}
       onPress={onPress}
-      color={color.primary}
       icon={({ size, color, direction }) => icon?.image ?? null}
       contentStyle={[size === "lg" ? t.h12 : t.h8]}
       // contentStyle={{flexDirection: 'row-reverse'}}
