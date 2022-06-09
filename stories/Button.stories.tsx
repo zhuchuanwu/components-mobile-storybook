@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import { t } from "react-native-tailwindcss";
 
 import { Button } from "../index";
@@ -15,15 +15,55 @@ export default {
 };
 
 export const Basic = (args: ButtonProps) => (
-  <View>
-    <Button {...args} style={[t.mB6]} />
-    <ThemeProvider>
-      <Button {...args} />
-    </ThemeProvider>
-  </View>
+  <ThemeProvider>
+    <Button {...args}>Button</Button>
+  </ThemeProvider>
+);
+
+export const ButtonWithIcon = (args: ButtonProps) => (
+  <ThemeProvider>
+    <Button {...args}>Button</Button>
+  </ThemeProvider>
+);
+
+export const ButtonOnlyWithIcon = (args: ButtonProps) => (
+  <ThemeProvider>
+    <Button {...args} />
+  </ThemeProvider>
 );
 Basic.args = {
-  onPress: () => {
-    alert("sdds");
-  },
-};
+  onPress: () => {},
+  variant: "contained",
+  disabled: false,
+  loading: false,
+} as ButtonProps;
+
+ButtonWithIcon.args = {
+  onPress: () => {},
+  variant: "contained",
+  disabled: false,
+  loading: false,
+  icon: (
+    <Image
+      source={{
+        uri: "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/plus-512.png",
+      }}
+      style={{ width: 30, height: 30 }}
+    />
+  ),
+} as ButtonProps;
+
+ButtonOnlyWithIcon.args = {
+  onPress: () => {},
+  variant: "contained",
+  disabled: false,
+  loading: false,
+  icon: (
+    <Image
+      source={{
+        uri: "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/plus-512.png",
+      }}
+      style={{ width: 30, height: 30 }}
+    />
+  ),
+} as ButtonProps;

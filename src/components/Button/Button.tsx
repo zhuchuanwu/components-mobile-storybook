@@ -1,63 +1,101 @@
 import { AntDesign } from "@expo/vector-icons";
 import React from "react";
-import { Image, StyleProp, TextStyle, ViewStyle } from "react-native";
+import {
+  Image,
+  ImageSourcePropType,
+  StyleProp,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
 import { Button as ButtonBase, IconButton } from "react-native-paper";
-import { color, t } from "react-native-tailwindcss";
+import { color, colors, t } from "react-native-tailwindcss";
+import { isEmpty } from "lodash";
 
 export interface ButtonProps {
   style?: StyleProp<ViewStyle>;
-  mode?: "text" | "outlined" | "contained" | undefined;
+  variant?: "text" | "outlined" | "contained" | "secondary";
   onPress?: () => void;
-  labelStyle?: StyleProp<TextStyle>;
   disabled?: boolean;
-  icon?: {
-    image: React.ReactNode;
-    direction?: "rtl" | "ltr" | "auto";
-    size?: "lg" | "md";
-  };
-  size?: "lg" | "md";
+  icon?: React.ReactNode;
   loading?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   style,
-  mode = "contained",
+  variant = "contained",
   onPress,
   disabled,
-  size = "lg",
   icon,
   children,
   loading,
-  labelStyle,
 }) => {
-  let defaultStyle: StyleProp<ViewStyle>[] = [t.roundedLg];
+  let defaultStyle: StyleProp<ViewStyle>[] = [];
   let defaultLabelStyle: StyleProp<ViewStyle>[] = [];
-  switch (mode) {
+  let defaultContentStyle: StyleProp<ViewStyle>[] = [{ height: 36 }];
+  let mode = "outlined";
+  let color = colors.white;
+  switch (variant) {
     case "outlined":
       defaultStyle = [...defaultStyle, t.borderPrimary, t.bgWhite];
-      defaultLabelStyle = [t.textBlack];
+      defaultLabelStyle = [t.textPrimary];
+      mode = variant;
       break;
     case "contained":
-      defaultStyle = [...defaultStyle];
+      defaultStyle = [...defaultStyle, t.bgPrimary];
       defaultLabelStyle = [t.textWhite];
+      mode = variant;
       break;
     case "text":
+      defaultStyle = [...defaultStyle, t.bgTransparent];
+      defaultLabelStyle = [t.textPrimary];
+      mode = variant;
+      break;
+    case "secondary":
+      mode = "text";
       defaultStyle = [...defaultStyle, t.bgNeutralsGrey];
       defaultLabelStyle = [t.textBlack];
       break;
     default:
       break;
   }
+  if (disabled) {
+    defaultStyle = [...defaultStyle, t.opacity50];
+  }
+  if (isEmpty(children)) {
+    defaultStyle = [
+      ...defaultStyle,
+      { width: 36, height: 36, minWidth: 36 },
+      t.justifyCenter,
+      t.itemsCenter,
+    ];
 
+    defaultLabelStyle = [...defaultLabelStyle, t.w0, t.h0];
+    defaultContentStyle = [...defaultContentStyle, { width: 36 }, t.pL4];
+  }
   return (
     <ButtonBase
       uppercase={false}
       mode={mode}
+      color={color}
       style={[...defaultStyle, style]}
-      labelStyle={[t.fontSemibold, ...defaultLabelStyle, labelStyle]}
+      labelStyle={[t.fontSemibold, ...defaultLabelStyle]}
       onPress={onPress}
-      icon={({ size, color, direction }) => icon?.image ?? null}
-      contentStyle={[size === "lg" ? t.h12 : t.h8]}
+      contentStyle={[defaultContentStyle]}
+      icon={({ size, color }) => {
+        if (isEmpty(icon) || icon == undefined) {
+          return null;
+        }
+        if (React.isValidElement(icon)) {
+          return React.cloneElement(icon as React.ReactElement<any>, {
+            style: {
+              width: size,
+              height: size,
+              tintColor: color,
+            },
+          });
+        }
+        return null;
+      }}
       // contentStyle={{flexDirection: 'row-reverse'}}
       disabled={disabled}
       children={children}

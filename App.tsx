@@ -18,6 +18,7 @@ let theme = {
     text: color.black,
     background: color.white,
   },
+
   fonts: configureFonts(fontConfig),
 };
 
@@ -28,12 +29,10 @@ export default () => {
     MontBoldHeavy: require("./assets/customFonts/Mont-Bold.ttf"),
   });
 
-  debugger
-  return  (<PaperProvider theme={theme}>
-    
-     <StorybookUIRoot />
-   
-</PaperProvider>);
-}
- 
-
+  debugger;
+  return (
+    <PaperProvider theme={theme}>
+      <StorybookUIRoot />
+    </PaperProvider>
+  );
+};
