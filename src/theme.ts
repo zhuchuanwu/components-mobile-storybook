@@ -7,7 +7,7 @@ import { color } from "react-native-tailwindcss";
 import fontConfig from "../fontConfig";
 let theme = {
   ...DefaultTheme,
-  roundness: 12,
+  roundness: 16,
   colors: {
     ...DefaultTheme.colors,
     primary: color.primary,

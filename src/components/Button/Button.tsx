@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   let defaultStyle: StyleProp<ViewStyle>[] = [];
   let defaultLabelStyle: StyleProp<ViewStyle>[] = [];
-  let defaultContentStyle: StyleProp<ViewStyle>[] = [{ height: 36 }];
+  let defaultContentStyle: StyleProp<ViewStyle>[] = [{ height: 45 }];
   let mode = "outlined";
   let color = colors.white;
   switch (variant) {
@@ -64,7 +64,7 @@ const Button: React.FC<ButtonProps> = ({
   if (isEmpty(children)) {
     defaultStyle = [
       ...defaultStyle,
-      { width: 36, height: 36, minWidth: 36 },
+      { width: 45, height: 45, minWidth: 45 },
       t.justifyCenter,
       t.itemsCenter,
     ];
