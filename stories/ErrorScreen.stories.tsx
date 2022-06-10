@@ -26,6 +26,7 @@ export const OverView = (args: ErrorScreenProps) => (
 OverView.args = {
   title: "Title",
   buttonLabel: "Button",
+  description: "Sample description describing the error will be here.",
   onButtonPress: () => {},
   logo: "the-pique-lab",
   illustration: require("../assets/InsufficientCredentials.png"),
