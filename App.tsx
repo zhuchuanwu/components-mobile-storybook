@@ -7,6 +7,7 @@ import {
 import { color } from "react-native-tailwindcss";
 import * as Font from "expo-font";
 import Button from "./src/components/Button/Button";
+import fontConfig from "./fontConfig";
 
 let theme = {
   ...DefaultTheme,
