@@ -55,7 +55,9 @@ function ErrorScreen({
     return logo;
   }, []);
   return (
-    <View style={[t.wFull, t.justifyCenter, t.itemsCenter]}>
+    <View
+      style={[{ width, height }, t.bgBlue200, t.justifyCenter, t.itemsCenter]}
+    >
       <View style={[isLandscape ? t.w2_5 : t.wFull, t.itemsCenter]}>
         {logoElement}
         <Image

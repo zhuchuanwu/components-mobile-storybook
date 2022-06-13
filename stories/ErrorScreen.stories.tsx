@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { View, Image, useWindowDimensions } from "react-native";
 import { t } from "react-native-tailwindcss";
 
 import { Button } from "../index";
@@ -17,11 +17,13 @@ export default {
   },
 };
 
-export const OverView = (args: ErrorScreenProps) => (
-  <ThemeProvider>
-    <ErrorScreen {...args} />
-  </ThemeProvider>
-);
+export const OverView = (args: ErrorScreenProps) => {
+  return (
+    <ThemeProvider>
+      <ErrorScreen {...args} />
+    </ThemeProvider>
+  );
+};
 
 OverView.args = {
   title: "Title",

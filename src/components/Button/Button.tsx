@@ -70,7 +70,7 @@ const Button: React.FC<ButtonProps> = ({
     ];
 
     defaultLabelStyle = [...defaultLabelStyle, t.w0, t.h0];
-    defaultContentStyle = [...defaultContentStyle, { width: 36 }, t.pL4];
+    defaultContentStyle = [...defaultContentStyle, { width: 45 }, t.pL4];
   }
   return (
     <ButtonBase
