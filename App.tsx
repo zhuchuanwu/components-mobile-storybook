@@ -1,6 +1,4 @@
 import React from "react";
-import StorybookUIRoot from "./.ondevice/Storybook";
-import { Platform, StatusBar, View } from "react-native";
 import {
   configureFonts,
   DefaultTheme,
@@ -8,6 +6,7 @@ import {
 } from "react-native-paper";
 import { color } from "react-native-tailwindcss";
 import * as Font from "expo-font";
+import Button from "./src/components/Button/Button";
 
 let theme = {
   ...DefaultTheme,
@@ -32,7 +31,7 @@ export default () => {
   debugger;
   return (
     <PaperProvider theme={theme}>
-      <StorybookUIRoot />
+      <Button>升级</Button>
     </PaperProvider>
   );
 };
