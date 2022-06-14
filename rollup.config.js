@@ -5,7 +5,7 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import { DEFAULT_EXTENSIONS } from "@babel/core";
-
+import image from "@rollup/plugin-image";
 import pkg from "./package.json";
 
 export default [
