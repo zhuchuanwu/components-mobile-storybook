@@ -7,9 +7,14 @@ import {
   TextStyle,
   ViewStyle,
 } from "react-native";
-import { Button as ButtonBase, IconButton } from "react-native-paper";
+import {
+  Button as ButtonBase,
+  IconButton,
+  withTheme,
+} from "react-native-paper";
 import { colors, t } from "react-native-tailwindcss";
 import { isEmpty } from "lodash";
+import theme from "../../theme";
 
 export interface ButtonProps {
   style?: StyleProp<ViewStyle>;
@@ -74,6 +79,7 @@ const Button: React.FC<ButtonProps> = ({
   }
   return (
     <ButtonBase
+      theme={theme}
       uppercase={false}
       mode={mode}
       color={color}
@@ -103,4 +109,4 @@ const Button: React.FC<ButtonProps> = ({
     />
   );
 };
-export default Button;
+export default withTheme(Button);
