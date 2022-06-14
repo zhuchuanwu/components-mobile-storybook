@@ -8,7 +8,7 @@ import {
   ViewStyle,
 } from "react-native";
 import { Button as ButtonBase, IconButton } from "react-native-paper";
-import { color, colors, t } from "react-native-tailwindcss";
+import { colors, t } from "react-native-tailwindcss";
 import { isEmpty } from "lodash";
 
 export interface ButtonProps {
@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   let defaultStyle: StyleProp<ViewStyle>[] = [];
   let defaultLabelStyle: StyleProp<ViewStyle>[] = [];
   let defaultContentStyle: StyleProp<ViewStyle>[] = [{ height: 45 }];
-  let mode = "outlined";
+  let mode: "text" | "outlined" | "contained" | undefined = "outlined";
   let color = colors.white;
   switch (variant) {
     case "outlined":

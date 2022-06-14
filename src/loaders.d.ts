@@ -7,7 +7,7 @@ declare module "react-native-tailwindcss" {
   } from "react-native-tailwindcss";
 
   interface CustomColors {
-    primary: ViewStyle | TextStyle;
+    primary: string;
     primaryBlue: ViewStyle | TextStyle;
     bgPrimary: ViewStyle;
     bgPrimaryBlue: ViewStyle;

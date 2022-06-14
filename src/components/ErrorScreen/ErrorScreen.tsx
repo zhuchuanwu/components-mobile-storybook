@@ -10,9 +10,7 @@ import Button from "../Button/Button";
 
 import { SvgXml } from "react-native-svg";
 import LogoTPL from "../LogoTPL/LogoTPL";
-import InsufficientCredentials from "../InsufficientCredentials";
 import { Text } from "react-native-paper";
-import LogoPiLab from "../LogoPiLab/LogoPiLab";
 
 export interface ErrorScreenProps {
   logo?: "the-pique-lab" | "the-pi-lab" | React.ReactNode;

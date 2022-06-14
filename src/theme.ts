@@ -3,9 +3,10 @@ import {
   DefaultTheme,
   Provider as PaperProvider,
 } from "react-native-paper";
+import { Fonts, Theme } from "react-native-paper/lib/typescript/types";
 import { color } from "react-native-tailwindcss";
 import fontConfig from "../fontConfig";
-let theme = {
+let theme: Theme = {
   ...DefaultTheme,
   roundness: 16,
   colors: {
