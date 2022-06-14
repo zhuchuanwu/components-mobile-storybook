@@ -19,6 +19,7 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           always-auth: true
       - run: npm install --force
+      - run: npm run build
       - run: npm publish --registry=https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

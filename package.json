@@ -1,6 +1,6 @@
 {
   "name": "@thepiquelab/archus-components-mobile",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Jianlong <1317272927@qq.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
