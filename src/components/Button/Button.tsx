@@ -7,11 +7,7 @@ import {
   TextStyle,
   ViewStyle,
 } from "react-native";
-import {
-  Button as ButtonBase,
-  IconButton,
-  withTheme,
-} from "react-native-paper";
+import { Button as ButtonBase, IconButton } from "react-native-paper";
 import { colors, t } from "react-native-tailwindcss";
 import { isEmpty } from "lodash";
 import theme from "../../theme";
@@ -109,4 +105,4 @@ const Button: React.FC<ButtonProps> = ({
     />
   );
 };
-export default withTheme(Button);
+export default Button;
