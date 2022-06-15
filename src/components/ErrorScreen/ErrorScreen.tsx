@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import {
+  Alert,
   Image,
   ImageSourcePropType,
   useWindowDimensions,
@@ -31,6 +32,7 @@ function ErrorScreen({
 }: ErrorScreenProps) {
   const { width, height } = useWindowDimensions();
   const isLandscape = width > height;
+
   const logoElement = useMemo(() => {
     if (logo === "the-pique-lab") {
       return (
@@ -41,8 +43,8 @@ function ErrorScreen({
           resizeMode="contain"
           style={[
             {
-              width: isLandscape ? (1 / 2) * width : 0.8 * width,
-              height: isLandscape ? (1 / 4) * width : 0.5 * width,
+              width: isLandscape ? (1 / 4) * width : 0.8 * width,
+              height: isLandscape ? (1 / 8) * width : 0.5 * width,
             },
           ]}
         />
@@ -57,8 +59,8 @@ function ErrorScreen({
           resizeMode="contain"
           style={[
             {
-              width: isLandscape ? (1 / 2) * width : 0.8 * width,
-              height: isLandscape ? (1 / 4) * width : 0.5 * width,
+              width: isLandscape ? (1 / 3) * width : 0.8 * width,
+              height: isLandscape ? (1 / 6) * width : 0.5 * width,
             },
           ]}
         />

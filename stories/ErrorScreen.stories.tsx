@@ -29,6 +29,6 @@ OverView.args = {
   buttonLabel: "Button",
   description: "Sample description describing the error will be here.",
   onButtonPress: () => {},
-  logo: "the-pique-lab",
+  logo: "the-pi-lab",
   illustration: require("../assets/InsufficientCredentials.png"),
 } as ErrorScreenProps;
